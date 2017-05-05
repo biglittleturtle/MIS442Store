@@ -11,6 +11,6 @@ namespace MIS442Store.DataLayer.DataModels
         public string ProductCode { get; set; }
         public string ProductName { get; set; }
         public decimal ProductVersion { get; set; }
-        public datetime ProductReleaseDate { get; set; }
+        public DateTime ProductReleaseDate { get; set; }
     }
 }

@@ -12,12 +12,12 @@ namespace MIS442Store.DataLayer.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        public string ProductID { get; private set; }
+        //public string ProductID { get; private set; }
 
         public Product Get(int id)
         {
             Product p = null;
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["OW206_5034\\SQLEXPRESS_MIS"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_TMiller"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -33,6 +33,10 @@ namespace MIS442Store.DataLayer.Repositories
                         {
                             p = new Product();
                             p.ProductID = int.Parse(reader["ProductID"].ToString());
+                            p.ProductCode = reader["ProductCode"].ToString();
+                            p.ProductName = reader["ProductName"].ToString();
+                            p.ProductVersion = decimal.Parse(reader["ProductVersion"].ToString());
+                            p.ProductReleaseDate = DateTime.Parse(reader["ProductReleaseDate"].ToString());
                         }
                     }
                 }
@@ -42,7 +46,8 @@ namespace MIS442Store.DataLayer.Repositories
 
         public List<Product> GetList()
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["OW206_5034\\SQLEXPRESS_MIS"].ConnectionString))
+            List<Product> productList = new List<Product>();
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_TMiller"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
@@ -53,27 +58,45 @@ namespace MIS442Store.DataLayer.Repositories
                     connection.Open();
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-
+                        while (reader.Read())
+                        {
+                            Product p = new Product();
+                            p.ProductID = int.Parse(reader["ProductID"].ToString());
+                            p.ProductCode = reader["ProductCode"].ToString();
+                            p.ProductName = reader["ProductName"].ToString();
+                            p.ProductVersion = decimal.Parse(reader["ProductVersion"].ToString());
+                            p.ProductReleaseDate = DateTime.Parse(reader["ProductReleaseDate"].ToString());
+                            productList.Add(p);
+                        }
                     }
                 }
             }
+            return productList;
         }
 
         public void Save(Product product)
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["OW206_5034\\SQLEXPRESS_MIS"].ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MIS442_TMiller"].ConnectionString))
             {
                 using (SqlCommand command = new SqlCommand())
                 {
+                    
                     command.Connection = connection;
                     command.CommandText = "spInsert_Update";
                     command.CommandType = CommandType.StoredProcedure;
 
-                    connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (product.ProductID != 0)
                     {
-
+                        command.Parameters.AddWithValue("@ProductID", product.ProductID);
                     }
+                    
+                    command.Parameters.AddWithValue("@ProductName", product.ProductName);
+                    command.Parameters.AddWithValue("@ProductCode", product.ProductCode);
+                    command.Parameters.AddWithValue("@ProductVersion", product.ProductVersion);
+                    command.Parameters.AddWithValue("@ProductReleaseDate", product.ProductReleaseDate);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
                 }
             }
         }
