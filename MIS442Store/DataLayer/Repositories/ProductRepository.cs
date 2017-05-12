@@ -12,8 +12,6 @@ namespace MIS442Store.DataLayer.Repositories
 {
     public class ProductRepository : IProductRepository
     {
-        //public string ProductID { get; private set; }
-
         public Product Get(int id)
         {
             Product p = null;
