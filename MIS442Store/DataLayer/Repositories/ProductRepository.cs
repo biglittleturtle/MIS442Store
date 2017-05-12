@@ -90,8 +90,8 @@ namespace MIS442Store.DataLayer.Repositories
                         command.Parameters.AddWithValue("@ProductID", product.ProductID);
                     }
                     
-                    command.Parameters.AddWithValue("@ProductName", product.ProductName);
                     command.Parameters.AddWithValue("@ProductCode", product.ProductCode);
+                    command.Parameters.AddWithValue("@ProductName", product.ProductName);
                     command.Parameters.AddWithValue("@ProductVersion", product.ProductVersion);
                     command.Parameters.AddWithValue("@ProductReleaseDate", product.ProductReleaseDate);
 

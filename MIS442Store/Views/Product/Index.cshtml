@@ -19,7 +19,7 @@
                 <td>@p.ProductName</td>
                 <td>@p.ProductVersion</td>
                 <td>@p.ProductReleaseDate</td>
-                <td>@Html.ActionLink("Edit Product", "Edit", "Product", new { @id = p.ProductID })</td>
+                <td>@Html.ActionLink("Edit Product", "Edit", "Product", new { @id = p.ProductID }, null)</td>
             </tr>
         }
     </tbody>
