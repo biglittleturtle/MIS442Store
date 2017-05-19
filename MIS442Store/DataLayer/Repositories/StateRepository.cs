@@ -1,4 +1,5 @@
-﻿using MIS442Store.DataLayer.Interfaces;
+﻿using MIS442Store.DataLayer.DataModels;
+using MIS442Store.DataLayer.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,9 @@ namespace MIS442Store.DataLayer.Repositories
     {
         public List<USState> Get()
         {
-
+            List<USState> a = new List<USState>();
+            return a;
+            
         }
     }
 }
