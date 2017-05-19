@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/CSS/myStyle.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title MIS442 Lab 7</title>
+    @RenderSection("PageHead", false)
+</head>
+<body>
+    <header id="HeaderBar">MIS442 Lab 7</header>
+    <div>
+        @RenderBody()
+    </div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@RenderSection("Scripts", false)
+</body>
+</html>
