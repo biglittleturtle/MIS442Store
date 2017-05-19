@@ -10,7 +10,7 @@ namespace MIS442Store.Controllers
     {
         public ActionResult Index()
         {
-            throw new Exception("Broken");
+            //throw new Exception("Broken");
             return View();
         }
 

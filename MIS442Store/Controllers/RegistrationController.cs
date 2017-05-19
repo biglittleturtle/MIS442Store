@@ -10,15 +10,17 @@ using System.Web.Mvc;
 
 namespace MIS442Store.Controllers
 {
+    [Authorize]
     public class RegistrationController : Controller
     {
         IRegistrationRepository _Repo = new RegistrationRepository();
         IStateRepository _State = new StateRepository();
 
+        
         [HttpGet]
         public ActionResult Index() // list registrations for a specific user
         {
-            return View(_Repo.GetUserRegistrations("timmy"));
+            return View(_Repo.GetUserRegistrations(User.Identity.Name));
         }
 
         [HttpGet]
@@ -29,6 +31,7 @@ namespace MIS442Store.Controllers
             return View(model);
         }
 
+        
         [HttpPost]
         public ActionResult AddRegistration(RegistrationModel registration)
         {
@@ -46,7 +49,7 @@ namespace MIS442Store.Controllers
             r.RegistrationProductID = registration.RegistrationProductID;
             r.RegistrationSerialNumber = registration.RegistrationSerialNumber;
             r.RegistrationState = registration.RegistrationState;
-            r.RegistrationUserName = registration.RegistrationUserName;
+            r.RegistrationUserName = User.Identity.Name;
             r.RegistrationVerified = registration.RegistrationVerified;
             r.RegistrationZip = registration.RegistrationZip;
             _Repo.SaveRegistration(r);

@@ -1,6 +1,6 @@
 ﻿@using MIS442Store.DataLayer.DataModels
 @model List<Registration>
-<td>@Html.ActionLink("Add", "AddRegistration", "Registration")</td> 
+<td> @Html.ActionLink("Add", "AddRegistration", "Registration") </ td >
 <table>
     <thead>
         <tr>
@@ -17,7 +17,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var r in Model)
+        @foreach(var r in Model)
         {
             <tr>
                 <td>@r.RegistrationID</td>

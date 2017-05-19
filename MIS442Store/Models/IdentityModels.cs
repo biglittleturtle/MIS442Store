@@ -21,7 +21,7 @@ namespace MIS442Store.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MIS442_TMiller", throwIfV1Schema: false)
         {
         }
 
