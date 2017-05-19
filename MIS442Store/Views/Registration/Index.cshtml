@@ -4,7 +4,7 @@
 <table>
     <thead>
         <tr>
-            <th>Registration ID</th>
+            <th>Registration ID </th>
             <th>Registration Date</th>
             <th>Registration Serial Number</th>
             <th>Registration Verified</th>
@@ -30,7 +30,7 @@
                 <td>@r.RegistrationCity</td>
                 <td>@r.RegistrationZip</td>
                 <td>@r.RegistrationPhone</td>
-                @*<td>@Html.ActionLink("Edit Product", "Edit", "Product", new { @id = p.ProductID }, null)</td>*@
+               <td>@Html.ActionLink("Add", "AddRegistration", "Registration")</td> 
             </tr>
         }
     </tbody>

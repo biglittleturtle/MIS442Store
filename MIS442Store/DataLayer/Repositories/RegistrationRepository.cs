@@ -121,7 +121,13 @@ namespace MIS442Store.DataLayer.Repositories
                 using (SqlCommand command = new SqlCommand())
                 {
                     command.Connection = connection;
-                    command.CommandText = "SELECT * FROM Registration";
+                    command.CommandText = @"Insert INTO Registration 
+                    (RegistrationDate, RegistrationProductID, RegistrationSerialNumber, RegistrationVerified, 
+                    RegistrationUserName, RegistrationAddress, RegistrationState, RegistrationCity, 
+                    RegistrationZip, RegistrationPhone) VALUES 
+                    (@RegistrationDate, @RegistrationProductID, @RegistrationSerialNumber, @RegistrationVerified, 
+                    @RegistrationUserName, @RegistrationAddress, @RegistrationState, @RegistrationCity, 
+                    @RegistrationZip, @RegistrationPhone)";
                     connection.Open();
 
                     if (reg.RegistrationID != 0)

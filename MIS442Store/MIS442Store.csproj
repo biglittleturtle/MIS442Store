@@ -291,7 +291,7 @@
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
-    <Content Include="Views\Registration\Add.cshtml" />
+    <Content Include="Views\Registration\AddRegistration.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

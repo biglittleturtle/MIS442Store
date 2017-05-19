@@ -1,6 +1,7 @@
-﻿@using MIS442Store.DataLayer.DataModels
-@model Registration
-@Html.BeginForm()
+﻿@using MIS442Store.Models
+@using MIS442Store.DataLayer.DataModels
+@model RegistrationModel
+@using (Html.BeginForm())
 {
 <div>
     @Html.LabelFor(m => m.RegistrationAddress)
@@ -57,5 +58,5 @@
     @Html.TextBoxFor(m => m.RegistrationZip)
     @Html.ValidationMessageFor(m => m.RegistrationZip)
 </div>
-<input type="button" value="submit" />
+<input type="submit" value="submit" />
 }
