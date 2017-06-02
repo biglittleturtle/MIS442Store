@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="MIS442DB">
+  <DataContextMoniker Name="/MIS442DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3decda68-736e-48e8-9a62-0067a9278c9a" absoluteBounds="4.25, 2.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/MIS442DBDataContext/ProductDO" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ac6a3f7-b6fe-4f9c-bd7b-ee3c444d4d90" absoluteBounds="4.265, 2.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

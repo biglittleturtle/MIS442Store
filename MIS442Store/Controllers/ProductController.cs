@@ -15,7 +15,8 @@ namespace MIS442Store.Controllers
 
         public ProductController()
         {
-            _Repo = new ProductRepository();
+            //_Repo = new ProductRepository(); lab 1-7
+            _Repo = new LINQProductRepository(); // lab 8b
         }
             
         [HttpGet]
