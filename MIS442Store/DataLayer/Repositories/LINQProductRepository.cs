@@ -12,7 +12,7 @@ namespace MIS442Store.DataLayer.Repositories
     {
         private MIS442DBDataContext _DataContext = new MIS442DBDataContext();
 
-        public Product Get(int id)
+        public virtual Product Get(int id)
         {
             Product p = null;
             ProductDO pDO = _DataContext.spProduct_Get(id).SingleOrDefault();
@@ -28,7 +28,7 @@ namespace MIS442Store.DataLayer.Repositories
             return p;
         }
 
-        public List<Product> GetList()
+        public virtual List<Product> GetList()
         {
             List<Product> list = new List<Product>();
             ISingleResult<ProductDO> pDO = _DataContext.spGet_List();
@@ -45,7 +45,7 @@ namespace MIS442Store.DataLayer.Repositories
             return list;
         }
 
-        public void Save(Product product)
+        public virtual void Save(Product product)
         {
             if (product.ProductID == 0)
             {

@@ -219,6 +219,7 @@
     </Compile>
     <Compile Include="DataLayer\Repositories\LINQProductRepository.cs" />
     <Compile Include="DataLayer\Repositories\NewsRepository.cs" />
+    <Compile Include="DataLayer\Repositories\ProductCachingRepository.cs" />
     <Compile Include="DataLayer\Repositories\ProductRepository.cs" />
     <Compile Include="DataLayer\Repositories\RegistrationRepository.cs" />
     <Compile Include="DataLayer\Repositories\StateRepository.cs" />
@@ -236,6 +237,7 @@
       <LastGenOutput>MIS442DB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Product\ViewProduct.cshtml" />
     <None Include="Views\Registration\AdminIndex.cshtml" />
     <Content Include="Views\Shared\MISLayout.cshtml" />
   </ItemGroup>
